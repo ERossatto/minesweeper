@@ -3,12 +3,13 @@ section {
   height: 100vh;
   width: 100vw;
 
-  div {
-    height: 100%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .field-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(11, 1fr);
   }
 }

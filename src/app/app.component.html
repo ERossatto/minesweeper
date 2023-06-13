@@ -1,7 +1,10 @@
 <section>
   <app-logger></app-logger>
   
-  <div>
-    <app-field></app-field>
+  <div class="field-container">
+    <div *ngFor="let field of fieldList">
+      <app-field [size]="getFieldSize()"></app-field>
+    </div>
   </div>
-</section>
+
+</section>  

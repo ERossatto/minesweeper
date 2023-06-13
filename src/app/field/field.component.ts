@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MyEvent } from '../my-event/my-event.interface';
 
 @Component({
@@ -8,6 +8,8 @@ import { MyEvent } from '../my-event/my-event.interface';
 })
 export class FieldComponent implements OnInit {
 
+  @Input() size: number;
+
   constructor(
     @Inject('MyEvent') public myEvent: MyEvent
   ) { }
@@ -15,10 +17,9 @@ export class FieldComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private counter: number = 1
   public onClick(): void {
-    this.myEvent.event.next(this.counter)
-    this.counter++
+    this.myEvent.event.next(this.myEvent.counter)
+    this.myEvent.counter++
   }
 
 }
